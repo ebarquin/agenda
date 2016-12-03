@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "lista-contactos",
@@ -6,11 +6,19 @@ import { Component } from "@angular/core";
 
 })
 
-export class ListaContactosComponent{
-      contactos: string[] = [
-    "Tim Cook",
-    "Bil Gates",
-    "Elon Musk"
-    ];
+export class ListaContactosComponent implements OnInit{
+      
+    contactos:string[]
+     
+    ngOnInit(): void {
+        //Contactos es un atributo de la instancia del componente
+        //por lo tanto tienes que acceder primero a la instancia (this) y luego al atributo
+         this.contactos = [
+            "Tim Cook",
+            "Bil Gates",
+            "Elon Musk"
+        ];
+
+    }
 
 }
