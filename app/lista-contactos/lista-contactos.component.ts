@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
     selector: "lista-contactos",
@@ -6,19 +6,17 @@ import { Component, OnInit } from "@angular/core";
 
 })
 
-export class ListaContactosComponent implements OnInit{
-      
-    contactos:string[]
-     
-    ngOnInit(): void {
-        //Contactos es un atributo de la instancia del componente
-        //por lo tanto tienes que acceder primero a la instancia (this) y luego al atributo
-         this.contactos = [
-            "Tim Cook",
-            "Bil Gates",
-            "Elon Musk"
-        ];
+export class ListaContactosComponent {
 
+    //Usamos el decorador 'Input' para enlazar datos de entrada  
+    @Input() contactos: string[];
+
+    //Usamoes el decorador 'Output' para notificar datos de salida.
+    @Output() eliminar: EventEmitter<string> = new EventEmitter();
+
+    notificarEliminacion(contacto: string): void {
+        //Usamos 'emmit' para notificar eventos.
+        this.eliminar.emit(contacto);
     }
 
 }

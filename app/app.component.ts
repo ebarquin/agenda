@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   //En 'selector' indicamos el elemento HTML en el cual 
@@ -14,7 +14,24 @@ import { Component } from '@angular/core';
     "h1{color: blue; }"
   ]
 })
-export class AppComponent  { 
-
-
+export class AppComponent implements OnInit { 
+  
+  listaContactos:string[];
+ 
+  
+  //El métpdo 'ngOnInit' viene dado por la interfaz 'OnInit', que es el 
+  //hook en el cual inicializamos los valores del componente.
+  ngOnInit(): void {
+      //Contactos es un atributo de la instancia del componente
+      //por lo tanto tienes que acceder primero a la instancia (this) y luego al atributo
+       this.listaContactos = [
+          "Tim Cook",
+          "Bil Gates",
+          "Elon Musk"
+        ];
+    
+    }
+    eliminarContacto(contacto: String):void {
+      this.listaContactos = this.listaContactos.filter((c: string) => c !== contacto);
+    }
  }
