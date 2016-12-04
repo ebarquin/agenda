@@ -10,11 +10,7 @@ import { ContactosService } from "./contactos.service";
   //template: `<h1>Hello {{name}}</h1>`,
   //En 'templateUrl' indicamos la ruta a un template externo
   templateUrl: "./app/app.component.html",
-  //En s'styles' establecemos los estilos que aplican 
-  //a nivel de componente.
-  styles:[
-    "h1{color: blue; }"
-  ]
+  
 })
 export class AppComponent implements OnInit { 
   listaContactos:string[];
@@ -24,16 +20,26 @@ export class AppComponent implements OnInit {
   //modificaeor de acceso y están tipoados.
   constructor(private _contactoService: ContactosService){ }
 
+  private _actualizarListaContactos(): void{
+    this.listaContactos=this._contactoService.obtenerContactos();
+  }
 
   //El métpdo 'ngOnInit' viene dado por la interfaz 'OnInit', que es el 
   //hook en el cual inicializamos los valores del componente.
   ngOnInit(): void {
       //Contactos es un atributo de la instancia del componente
       //por lo tanto tienes que acceder primero a la instancia (this) y luego al atributo
-       this.listaContactos = this._contactoService.obtenerContactos()
+       this._actualizarListaContactos();
     
     }
+
+    agregarContacto(contacto: string): void{
+      this._contactoService.agregarContacto(contacto);
+      this._actualizarListaContactos();
+    }
+
     eliminarContacto(contacto: String):void {
-      this.listaContactos = this.listaContactos.filter((c: string) => c !== contacto);
+      this._contactoService.eliminarContacto(contacto);
+      this._actualizarListaContactos();
     }
  }

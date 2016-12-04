@@ -5,8 +5,9 @@ import { FormsModule} from '@angular/forms'
 import { AppComponent }  from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component'
 
-import { BindingComponent} from "./ejemplos/binding.component"
+import { BindingComponent} from "./ejemplos/binding.component";
 import { ContactosService } from "./contactos.service";
+import {  FormularioContactoComponent } from "./formulario-contacto/formulario-contacto.component";
 @NgModule({
   //Usamos 'imports' para importar otros módulos
   //de los cuales dependemos.
@@ -18,7 +19,8 @@ import { ContactosService } from "./contactos.service";
   declarations: [
      AppComponent, 
      ListaContactosComponent,
-     BindingComponent 
+     BindingComponent,
+     FormularioContactoComponent
   ],
   //En 'providers' añadimos todos los servicios de
   //nuestra aplicación
