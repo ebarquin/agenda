@@ -6,6 +6,7 @@ import { AppComponent }  from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component'
 
 import { BindingComponent} from "./ejemplos/binding.component"
+import { ContactosService } from "./contactos.service";
 @NgModule({
   //Usamos 'imports' para importar otros módulos
   //de los cuales dependemos.
@@ -21,7 +22,9 @@ import { BindingComponent} from "./ejemplos/binding.component"
   ],
   //En 'providers' añadimos todos los servicios de
   //nuestra aplicación
-  providers:[],
+  providers:[
+    ContactosService
+  ],
   //En 'bootstrap' indicamos el componente raiz de 
   //nuestra aplicación.
   bootstrap: [
