@@ -16,8 +16,14 @@
         atributo  del componente expuesto con el decorador 'Output'.-->
         <lista-contactos 
         [contactos]= "listaContactos"
-        (eliminar)="eliminarContacto($event)">
+        (contactoSeleccionado)="verDetallesContacto($event)">
         </lista-contactos>
+
+        <!-- Detalles del contacto seleccionado -->
+        <detalles-contacto
+            [contacto]="contactoSeleccionado"
+            (eliminar)="eliminarContacto($event)">
+        </detalles-contacto>
     
     </section>
 </div>

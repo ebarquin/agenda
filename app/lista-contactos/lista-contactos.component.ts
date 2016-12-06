@@ -13,12 +13,10 @@ export class ListaContactosComponent {
     //Usamos el decorador 'Input' para enlazar datos de entrada  
     @Input() contactos: Contacto[];
 
-    //Usamoes el decorador 'Output' para notificar datos de salida.
-    @Output() eliminar: EventEmitter<Contacto> = new EventEmitter();
 
-    notificarEliminacion(contacto: Contacto): void {
-        //Usamos 'emmit' para notificar eventos.
-        this.eliminar.emit(contacto);
+    @Output() contactoSeleccionado: EventEmitter<Contacto> = new EventEmitter();
+
+    notificarContactoSeleccionado(contacto: Contacto): void {
+        this.contactoSeleccionado.emit(contacto);
     }
-
 }

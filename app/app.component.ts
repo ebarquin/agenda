@@ -15,6 +15,7 @@ import { Contacto } from "./contacto";
 export class AppComponent implements OnInit {
 
   listaContactos:Contacto[];
+  contactoSeleccionado: Contacto;
 
   //Hacemos la inyección de dependencias del servicio.Aprovechamos
   //que Typescript crea un atributo de aqullos argumentos que tienen 
@@ -47,5 +48,10 @@ export class AppComponent implements OnInit {
       this._contactoService
           .eliminarContacto(contacto)
           .subscribe(() => this._actualizarListaContactos());
+    }
+
+    verDetallesContacto(contacto: Contacto):void {
+      this.contactoSeleccionado = contacto;
+
     }
  }

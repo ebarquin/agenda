@@ -9,6 +9,7 @@ import { ListaContactosComponent } from './lista-contactos/lista-contactos.compo
 import { BindingComponent} from "./ejemplos/binding.component";
 import { ContactosService } from "./contactos.service";
 import {  FormularioContactoComponent } from "./formulario-contacto/formulario-contacto.component";
+import { DetallesContactoComponent } from "./detalles-contacto/detalles-contacto.component";
 @NgModule({
   //Usamos 'imports' para importar otros módulos
   //de los cuales dependemos.
@@ -23,7 +24,8 @@ import {  FormularioContactoComponent } from "./formulario-contacto/formulario-c
      AppComponent, 
      ListaContactosComponent,
      BindingComponent,
-     FormularioContactoComponent
+     FormularioContactoComponent,
+     DetallesContactoComponent
   ],
   //En 'providers' añadimos todos los servicios de
   //nuestra aplicación

@@ -1,0 +1,9 @@
+<!-- La directiva 'ngIf' añade o elimina contendido del DOM según resuelva
+la expresión indicada como 'true' o como 'false' -->
+
+<div *ngIf="contacto">
+    <!-- Nombre del contacto -->
+    <h5>{{ contacto.nombre }}</h5>
+    <!-- Boton eliminar contacto -->
+    <button(click)="notificarEliminacion(contacto)">Eliminar Contacto</button>
+</div>
