@@ -2,7 +2,7 @@
         <!--Con la directiva 'ngFor' iteramos por una colección y replicamos 
         el elemnto HTML por cada item de la lista -->
         <li *ngFor="let contacto of contactos">
-            {{ contacto }}
+            {{ contacto.nombre }}
             <button (click)="notificarEliminacion(contacto)">Eliminar Contacto</button>
         </li>
     </ul>

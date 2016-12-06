@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule} from '@angular/forms'
+import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component'
@@ -12,7 +13,9 @@ import {  FormularioContactoComponent } from "./formulario-contacto/formulario-c
   //Usamos 'imports' para importar otros módulos
   //de los cuales dependemos.
   imports: [
-     BrowserModule, FormsModule
+     BrowserModule, 
+     FormsModule,
+     HttpModule
   ],
   //En 'declarations' añadimos todos los componentes
   // pipes y directivas de nuestra aplicación

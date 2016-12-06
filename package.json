@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Agenda programada con Angular 2.",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" "
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" \"json-server db.json --port 3005\" "
   },
   "keywords": [],
   "author": "Eugenio Barquín",
@@ -26,9 +26,10 @@
     "zone.js": "^0.6.26"
   },
   "devDependencies": {
+    "@types/node": "^6.0.46",
     "concurrently": "^3.1.0",
+    "json-server": "^0.9.2",
     "lite-server": "^2.2.2",
-    "typescript": "^2.0.10",
-    "@types/node": "^6.0.46"
+    "typescript": "^2.0.10"
   }
 }
