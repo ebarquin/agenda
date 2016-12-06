@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ContactosService, Contacto } from "./contactos.service";
-
+import { ContactosService } from "./contactos.service";
+import { Contacto } from "./contacto";
 @Component({
   //En 'selector' indicamos el elemento HTML en el cual 
   //se instanciará el componente
@@ -36,17 +36,16 @@ export class AppComponent implements OnInit {
     
     }
 
-    agregarContacto(nombreContacto: string): void {
-      let contacto: Contacto = new Contacto();
-      contacto.nombre = nombreContacto;
-
-      this._contactoService
+    agregarContacto(contacto: Contacto): void {
+        this._contactoService
           .agregarContacto(contacto)
           .subscribe((nuevoContacto: Contacto) => this._actualizarListaContactos());
       
     }
 
-    eliminarContacto(contacto: string):void {
-      //
+    eliminarContacto(contacto: Contacto):void {
+      this._contactoService
+          .eliminarContacto(contacto)
+          .subscribe(() => this._actualizarListaContactos());
     }
  }

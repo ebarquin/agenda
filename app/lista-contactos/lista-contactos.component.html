@@ -3,6 +3,9 @@
         el elemnto HTML por cada item de la lista -->
         <li *ngFor="let contacto of contactos">
             {{ contacto.nombre }}
-            <button (click)="notificarEliminacion(contacto)">Eliminar Contacto</button>
+            <button
+                (click)="notificarEliminacion(contacto)">
+                    Eliminar Contacto
+            </button>
         </li>
     </ul>
