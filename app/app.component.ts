@@ -45,9 +45,16 @@ export class AppComponent implements OnInit {
     }
 
     eliminarContacto(contacto: Contacto):void {
-      this._contactoService
-          .eliminarContacto(contacto)
-          .subscribe(() => this._actualizarListaContactos());
+        //Preguntamos al usuario si está seguro de eliminar al contacto.
+        if (confirm(`¿Estás segurio de eliminar a ${contacto.nombre}?`)){
+        //En caso de estar seguro lo eliminamos.
+        this._contactoService
+            .eliminarContacto(contacto)
+            .subscribe(() => {
+              this.contactoSeleccionado = null;
+              this._actualizarListaContactos()
+            });
+        }
     }
 
     verDetallesContacto(contacto: Contacto):void {
