@@ -1,23 +1,16 @@
 {
   "contactos": [
     {
-      "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
       "nombre": "Bill Gates ",
       "id": 7
+    },
+    {
+      "nombre": "Bob Esponja",
+      "id": 8
+    },
+    {
+      "nombre": "Elon Musk",
+      "id": 9
     }
   ]
 }

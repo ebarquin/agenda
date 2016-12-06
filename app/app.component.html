@@ -8,22 +8,29 @@
         <formlario-contacto 
         (nuevoContacto)="agregarContacto($event)">
         </formlario-contacto>
-            
-        <!-- Para enlazar datos de entrada a un componente, usamos como atributo entre corchetes
-        el atributo expuesto con el decorador 'Input'en dicho componente -->
-        
-        <!-- Nos suscribimos a eventos envolviendo con paréntesis el 
-        atributo  del componente expuesto con el decorador 'Output'.-->
-        <lista-contactos 
-        [contactos]= "listaContactos"
-        (contactoSeleccionado)="verDetallesContacto($event)">
-        </lista-contactos>
 
-        <!-- Detalles del contacto seleccionado -->
-        <detalles-contacto
-            [contacto]="contactoSeleccionado"
-            (eliminar)="eliminarContacto($event)">
-        </detalles-contacto>
-    
+        <div class="row">
+            <!-- Lista de contactos -->
+            <div class="six columns">
+                <!-- Para enlazar datos de entrada a un componente, usamos como atributo entre corchetes
+                el atributo expuesto con el decorador 'Input'en dicho componente -->
+                
+                <!-- Nos suscribimos a eventos envolviendo con paréntesis el 
+                atributo  del componente expuesto con el decorador 'Output'.-->
+                <lista-contactos 
+                    [contactos]= "listaContactos"
+                    (contactoSeleccionado)="verDetallesContacto($event)">
+                </lista-contactos>
+            </div>
+
+            <!-- Detalles del contacto seleccionado -->
+            <div class="six columns">
+                <detalles-contacto
+                    [contacto]="contactoSeleccionado"
+                    (eliminar)="eliminarContacto($event)">
+                </detalles-contacto>
+
+            </div>
+        </div>
     </section>
 </div>
