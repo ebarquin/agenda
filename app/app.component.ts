@@ -61,4 +61,7 @@ export class AppComponent implements OnInit {
       this.contactoSeleccionado = contacto;
 
     }
+    navegarRuta(ruta: string): void {
+      window.open(ruta, "_blank");
+    }
  }
