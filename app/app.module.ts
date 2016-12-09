@@ -10,13 +10,19 @@ import { BindingComponent} from "./ejemplos/binding.component";
 import { ContactosService } from "./contactos.service";
 import {  FormularioContactoComponent } from "./formulario-contacto/formulario-contacto.component";
 import { DetallesContactoComponent } from "./detalles-contacto/detalles-contacto.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { MisContactosComponent } from "./mis-contactos/mis-contactos.component";
+import { NuevoContactoComponent } from "./nuevo-contacto/nuevo-contacto.component";
+import { BarraNavegacionComponent } from "./barra-navegacion/barra-navegacion.component"
+
 @NgModule({
   //Usamos 'imports' para importar otros módulos
   //de los cuales dependemos.
   imports: [
      BrowserModule, 
      FormsModule,
-     HttpModule
+     HttpModule,
+     AppRoutingModule
   ],
   //En 'declarations' añadimos todos los componentes
   // pipes y directivas de nuestra aplicación
@@ -25,7 +31,10 @@ import { DetallesContactoComponent } from "./detalles-contacto/detalles-contacto
      ListaContactosComponent,
      BindingComponent,
      FormularioContactoComponent,
-     DetallesContactoComponent
+     DetallesContactoComponent,
+     MisContactosComponent,
+     NuevoContactoComponent,
+     BarraNavegacionComponent
   ],
   //En 'providers' añadimos todos los servicios de
   //nuestra aplicación
