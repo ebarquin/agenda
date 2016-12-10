@@ -15,6 +15,8 @@ import { MisContactosComponent } from "./mis-contactos/mis-contactos.component";
 import { NuevoContactoComponent } from "./nuevo-contacto/nuevo-contacto.component";
 import { BarraNavegacionComponent } from "./barra-navegacion/barra-navegacion.component"
 import { ContactosResolve } from "./contactos-resolve.service";
+import { OrdenPipe } from "./orden.pipe";
+
 @NgModule({
   //Usamos 'imports' para importar otros módulos
   //de los cuales dependemos.
@@ -34,7 +36,8 @@ import { ContactosResolve } from "./contactos-resolve.service";
      DetallesContactoComponent,
      MisContactosComponent,
      NuevoContactoComponent,
-     BarraNavegacionComponent
+     BarraNavegacionComponent,
+     OrdenPipe
   ],
   //En 'providers' añadimos todos los servicios de
   //nuestra aplicación

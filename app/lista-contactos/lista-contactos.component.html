@@ -1,7 +1,17 @@
+
+<!-- Botón de ordenación -->
+<button 
+    class="icono"
+    (click)="cambiarOrden()">
+    <i class="fa" 
+        [class.fa-sort-alpha-asc]="sentidoOrdenacion !== 'asc'"
+        [class.fa-sort-alpha-desc]="sentidoOrdenacion === 'asc'"
+        aria-hidden="true"></i>
+</button>
 <ul>
         <!--Con la directiva 'ngFor' iteramos por una colección y replicamos 
         el elemnto HTML por cada item de la lista -->
-        <li *ngFor="let contacto of contactos"
+        <li *ngFor="let contacto of (contactos | Ordenar :sentidoOrdenacion)"
             (click)="notificarContactoSeleccionado(contacto)">
             {{ contacto.nombre }} {{contacto.apellidos}}
             
