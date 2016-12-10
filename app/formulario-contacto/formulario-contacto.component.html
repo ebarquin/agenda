@@ -1,4 +1,6 @@
 
+<div class="row">
+    <div class="offset-by-three six columns">
 <!-- Podemos obtener una referencia al objeto FormGroup correspondiente 
 a un formulario a través de la directiva 'ngForm'. Tan sólo tenemos que
 asignarla a una 'template reference variable'. -->
@@ -17,7 +19,8 @@ asignarla a una 'template reference variable'. -->
             placeholder="Ej. Tim "
             ngModel
             required
-            #campoNombre="ngModel">
+            #campoNombre="ngModel"
+            class="u-full-width">
         <div class ="mensaje-error" 
             *ngIf="campoNombre.touched && campoNombre.invalid">
             El nombre es un campo obligatorio
@@ -33,7 +36,8 @@ asignarla a una 'template reference variable'. -->
             placeholder="Ej. Cook"
             ngModel
             required
-            #campoApellidos="ngModel">
+            #campoApellidos="ngModel"
+            class="u-full-width">
          <div class ="mensaje-error" 
             *ngIf="campoApellidos.touched && campoApellidos.invalid">
             El apellido es un campo obligatorio
@@ -48,7 +52,8 @@ asignarla a una 'template reference variable'. -->
             name="email"
             type="text"
             placeholder="Ej.timcook@apple.com"
-            ngModel>
+            ngModel
+            class="u-full-width">
     </div>
     <!-- Teléfono del contacto -->
     <div>
@@ -58,7 +63,8 @@ asignarla a una 'template reference variable'. -->
             name="telefono"
             type="text"
             placeholder="Ej. 91 234 567"
-            ngModel>
+            ngModel
+            class="u-full-width">
     </div>
 
         <!-- Facebook del contacto -->
@@ -69,7 +75,8 @@ asignarla a una 'template reference variable'. -->
             name="facebook"
             type="text"
             placeholder="Ej. tim.cook"
-            ngModel>
+            ngModel
+            class="u-full-width">
     </div>
 
         <!-- Twitter del contacto -->
@@ -80,12 +87,16 @@ asignarla a una 'template reference variable'. -->
             name="twitter"
             type="text"
             placeholder="Ej.@timcook"
-            ngModel>
+            ngModel
+            class="u-full-width">
     </div>
     <div>
         <button
             type="submit"
-            class= "button-primary"
+            class= "button-primary u-full-width"
             [disabled]="formularioContacto.invalid">Añadir</button>
     </div>
 </form>
+
+    </div>
+</div>
